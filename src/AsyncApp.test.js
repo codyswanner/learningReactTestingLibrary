@@ -15,7 +15,7 @@ describe('App', () => {
   
       // default to "getByText" or "getByRole"
       // as these are easiest/simplest
-      expect(screen.getByText(/Search:/)).toBeInTheDocument();
+      expect(screen.getByText(/Search:/)).toBeInTheDocument();  
     });
     it('does not render extra nonsense', async () => {
       await(act( async () => {render(<AsyncApp/>)}));
@@ -63,7 +63,7 @@ describe('Search', () => {
 
         // userEvent simulates all actions, keyUp, keyDown, etc.
         // (Much like Selenium)
-        await userEvent.type(screen.getByRole('textbox'), 'JavaScript');
+        userEvent.type(screen.getByRole('textbox'), 'JavaScript');
 
         expect(onChange).toHaveBeenCalledTimes(10);
     });
